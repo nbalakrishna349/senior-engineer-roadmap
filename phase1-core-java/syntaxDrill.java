@@ -7,9 +7,12 @@ public class syntaxDrill{
 
         String [] words = {"Bala","Bala","Chandu"};
 
+        List<String> stringList = Arrays.asList("12", "abc", "7", "xyz", "3");
+
         Map<String,Integer> output = wordFrequency(words);
         List<Integer> result = getEvenNumbers(num);
-        System.out.println(output);
+        int stringresult = sumofvalidNumbers(stringList);
+        System.out.println(stringresult);
     }
 
     public static int countvowels(String sentance){
@@ -55,5 +58,19 @@ public class syntaxDrill{
             }
         }
         return result;
+    }
+
+    public static int sumofvalidNumbers(List<String> numberstrings){
+        int sum = 0;
+        for(int i=0; i<numberstrings.size();i++){
+            String word = numberstrings.get(i);
+            try{
+                int num = Integer.parseInt(word);
+                sum = sum + num;
+            }
+            catch (NumberFormatException e){
+            }
+        }
+        return  sum;
     }
 }
